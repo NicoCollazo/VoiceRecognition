@@ -1,4 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  ElementRef,
+} from '@angular/core';
 import { VoiceRecognitionService } from '../service/voice-recognition.service';
 
 @Component({
@@ -16,7 +22,10 @@ export class SpeechToTextComponent implements OnInit {
   enableDarkMode: boolean = false;
   @Output() darkModeEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(public service: VoiceRecognitionService) {
+  constructor(
+    public service: VoiceRecognitionService,
+    private elementRef: ElementRef
+  ) {
     this.service.init();
   }
 
@@ -46,6 +55,8 @@ export class SpeechToTextComponent implements OnInit {
   checkForEffects() {
     if (this.service.text.includes('que se haga de noche')) {
       this.enableDarkMode = true;
+      this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor =
+        '#121212';
       this.darkModeEvent.emit(this.enableDarkMode);
     }
   }
