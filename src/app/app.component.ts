@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: string = 'voice-recognition';
   footerText: string = 'Cátedra Proyecto Final - Grupo 2\nUTN FRBA\n2022';
+  darkModeEnabled: boolean = false;
+
+  enableDarkMode() {
+    this.darkModeEnabled = true;
+  }
 }

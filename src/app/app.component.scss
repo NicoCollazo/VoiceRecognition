@@ -1,14 +1,12 @@
 footer {
-    white-space: pre-line;
-    bottom: 0;
-    width: 100%;
-    height: 10px;
-    margin-left: 10vh;
+  white-space: pre-line;
+  bottom: 0;
+  //width: 100%;
+  //height: 10px;
+  margin-left: 10vh;
 }
 
-body {
-    min-height: 100vh;
-    margin: 0;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+.darkMode {
+  color: grey;
+  background-color: #121212;
 }
