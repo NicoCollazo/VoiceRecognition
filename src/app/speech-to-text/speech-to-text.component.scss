@@ -5,6 +5,7 @@
 .boxsize {
     width: 500px;
     height: 150px;
+    margin-bottom: 20px;
 }
 
 .buttons {
@@ -13,4 +14,10 @@
     margin-bottom: 10px;
     display: flex;
     align-items: flex-start;
+}
+
+.darkMode {
+    background-color: #121212;
+    color: grey;
+    margin-bottom: 50px;
 }

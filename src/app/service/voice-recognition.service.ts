@@ -9,7 +9,7 @@ export class VoiceRecognitionService {
   recognition = new webkitSpeechRecognition();
   isStoppedSpeechRecog = false;
   public text = '';
-  tempWords;
+  tempWords = '';
 
   constructor() {}
 
@@ -28,6 +28,7 @@ export class VoiceRecognitionService {
   }
 
   start() {
+    this.text = '';
     this.isStoppedSpeechRecog = false;
     this.recognition.start();
     console.log('Speech recognition started');
@@ -41,6 +42,7 @@ export class VoiceRecognitionService {
       }
     });
   }
+
   stop() {
     this.isStoppedSpeechRecog = true;
     this.wordConcat();
